@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetOutlook", "GetOutlook\GetOutlook.csproj", "{5E5EED25-556C-4993-B395-B58EF8D24E8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{1146971F-61D5-4C97-8EBC-17E7BE4351EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E5EED25-556C-4993-B395-B58EF8D24E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E5EED25-556C-4993-B395-B58EF8D24E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E5EED25-556C-4993-B395-B58EF8D24E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E5EED25-556C-4993-B395-B58EF8D24E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1146971F-61D5-4C97-8EBC-17E7BE4351EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1146971F-61D5-4C97-8EBC-17E7BE4351EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1146971F-61D5-4C97-8EBC-17E7BE4351EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1146971F-61D5-4C97-8EBC-17E7BE4351EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3B2EF3DF-43BB-44C7-875B-CB4BC6C63D5B}
+	EndGlobalSection
+EndGlobal

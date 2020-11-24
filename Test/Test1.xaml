@@ -1,0 +1,87 @@
+﻿<Activity mc:Ignorable="sap sap2010 sads" x:Class="Test.Test1" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="Test.Test1_1"
+ xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities"
+ xmlns:g="clr-namespace:GetOutlook;assembly=GetOutlook"
+ xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+ xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities"
+ xmlns:sads="http://schemas.microsoft.com/netfx/2010/xaml/activities/debugger"
+ xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation"
+ xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation"
+ xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib"
+ xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib"
+ xmlns:snm="clr-namespace:System.Net.Mail;assembly=System"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Text</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Net.Http</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>Microsoft.Office.Interop.Outlook</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>GetOutlook</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>Test</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="list" />
+    </Sequence.Variables>
+    <g:GetOutlookMessage Filter="{x:Null}" TimeoutMS="{x:Null}" Account="invoice@ickey.cn" sap2010:WorkflowViewState.IdRef="GetOutlookMessage_1" MailFolder="收件箱" MarkAsRead="False" OnlyUnreadMessages="True" TimeOrder="False" Top="4">
+      <g:GetOutlookMessage.Messages>
+        <OutArgument x:TypeArguments="scg:List(snm:MailMessage)">
+          <mca:CSharpReference x:TypeArguments="scg:List(snm:MailMessage)">list</mca:CSharpReference>
+        </OutArgument>
+      </g:GetOutlookMessage.Messages>
+    </g:GetOutlookMessage>
+    <ForEach x:TypeArguments="snm:MailMessage" DisplayName="ForEach&lt;MailMessage&gt;" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+      <ForEach.Values>
+        <InArgument x:TypeArguments="scg:IEnumerable(snm:MailMessage)">
+          <mca:CSharpValue x:TypeArguments="scg:IEnumerable(snm:MailMessage)">list</mca:CSharpValue>
+        </InArgument>
+      </ForEach.Values>
+      <ActivityAction x:TypeArguments="snm:MailMessage">
+        <ActivityAction.Argument>
+          <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
+        </ActivityAction.Argument>
+        <WriteLine sap2010:WorkflowViewState.IdRef="WriteLine_1">
+          <InArgument x:TypeArguments="x:String">
+            <mca:CSharpValue x:TypeArguments="x:String">item.Headers[2]</mca:CSharpValue>
+          </InArgument>
+        </WriteLine>
+      </ActivityAction>
+    </ForEach>
+    <sads:DebugSymbol.Symbol>dzRDOlxVc2Vyc1xUaGlua1BhZFxEZXNrdG9wXEdldE91dGxvb2tcVGVzdFxUZXN0MS54YW1sCioDRw4CAQEuBTQbAgEJNQVFDwIBAi7mAS7pAQIBDi5JLlsCAQ0xCzFmAgELLp0BLqIBAgEKOAs4ZQIBBz8JQxUCAQNBDUFaAgEE</sads:DebugSymbol.Symbol>
+  </Sequence>
+  <sap2010:WorkflowViewState.ViewStateManager>
+    <sap2010:ViewStateManager>
+      <sap2010:ViewStateData Id="GetOutlookMessage_1" sap:VirtualizedContainerService.HintSize="291,22" />
+      <sap2010:ViewStateData Id="WriteLine_1" sap:VirtualizedContainerService.HintSize="213,63" />
+      <sap2010:ViewStateData Id="ForEach`1_1" sap:VirtualizedContainerService.HintSize="291,214" />
+      <sap2010:ViewStateData Id="Sequence_1" sap:VirtualizedContainerService.HintSize="313,400">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </sap2010:ViewStateData>
+      <sap2010:ViewStateData Id="Test.Test1_1" sap:VirtualizedContainerService.HintSize="353,480" />
+    </sap2010:ViewStateManager>
+  </sap2010:WorkflowViewState.ViewStateManager>
+</Activity>
